@@ -49,12 +49,12 @@ interface Course {
 
 const getPopularCourses = (courses: Course[], minStudents : number): Course[] => {
 
-    return courses.filter(course => course.students >= minStudents && course.isPublished);
+    return courses.filter((course:Course): boolean => course.students >= minStudents && course.isPublished);
 }
 
 const pluckValues = <T, K extends keyof T> (items: T[], key: K): T[K][] => {
 
-    return items.map(item => item[key]);
+    return items.map((item:T): T[K] => item[key]);
 }
 
 class Employee {
